@@ -28,13 +28,34 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.buttonConnDb = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// buttonConnDb
+			// 
+			this.buttonConnDb.Location = new System.Drawing.Point(27, 28);
+			this.buttonConnDb.Name = "buttonConnDb";
+			this.buttonConnDb.Size = new System.Drawing.Size(204, 64);
+			this.buttonConnDb.TabIndex = 0;
+			this.buttonConnDb.Text = "連結Db";
+			this.buttonConnDb.UseVisualStyleBackColor = true;
+			this.buttonConnDb.Click += new System.EventHandler(this.buttonConnDb_Click);
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.buttonConnDb);
+			this.Name = "Form1";
 			this.Text = "Form1";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Button buttonConnDb;
 	}
 }
 

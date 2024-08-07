@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WA.Estore.SqlDataLayer;
 
 namespace MidtermProject
 {
@@ -15,6 +16,15 @@ namespace MidtermProject
 		public Form1()
 		{
 			InitializeComponent();
+		}
+
+		private void buttonConnDb_Click(object sender, EventArgs e)
+		{
+			using(var conn = new SqlDb().Getconn("default"))
+			{
+				conn.Open();
+			}
+			MessageBox.Show("連結成功");
 		}
 	}
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MidtermProject", "MidtermProject\MidtermProject.csproj", "{A1C5B1B1-BAB1-4874-8CEE-01CFB1DDB390}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WA.Estore.SqlDataLayer", "WA.Estore.SqlDataLayer\WA.Estore.SqlDataLayer.csproj", "{838D7A48-A3DF-401E-93A2-D9DB5B38435E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A1C5B1B1-BAB1-4874-8CEE-01CFB1DDB390}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C5B1B1-BAB1-4874-8CEE-01CFB1DDB390}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C5B1B1-BAB1-4874-8CEE-01CFB1DDB390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838D7A48-A3DF-401E-93A2-D9DB5B38435E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838D7A48-A3DF-401E-93A2-D9DB5B38435E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838D7A48-A3DF-401E-93A2-D9DB5B38435E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838D7A48-A3DF-401E-93A2-D9DB5B38435E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
