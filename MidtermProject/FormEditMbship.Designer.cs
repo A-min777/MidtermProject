@@ -91,6 +91,7 @@
 			this.buttonDelete.TabIndex = 2;
 			this.buttonDelete.Text = "刪除";
 			this.buttonDelete.UseVisualStyleBackColor = false;
+			this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
 			// 
 			// FormEditMbship
 			// 

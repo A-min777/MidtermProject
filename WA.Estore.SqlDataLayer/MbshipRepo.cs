@@ -59,6 +59,29 @@ namespace WA.Estore.SqlDataLayer
 			};
 			db.ExecuteNonQuery("default", sql, parameters);
 		}
+
+		public void Create(MbshipsDto dto)
+		{
+			var db = new SqlDb();
+			var sql = $"INSERT INTO Memberships (MembershipLevel , DisplayOrder) VALUES(@MembershipLevel , @DisplayOrder)";
+
+			var parameters = new SqlParameter[]
+			{
+				new SqlParameter("@MembershipLevel", dto.MembershipLevel),
+				new SqlParameter("@DisplayOrder", dto.DisplayOrder),				
+			};
+			db.ExecuteNonQuery("default", sql, parameters);
+		}
+
+		public void Delete(int Id)
+		{
+			var db = new SqlDb();
+			var sql = $"DELETE FROM Memberships WHERE ID = {Id}";
+
+
+			db.ExecuteNonQuery("default", sql);
+		}
+
 		public bool IsExists(string name, int id = -1)
 		{
 			var sql = $"SELECT COUNT(*) FROM Memberships WHERE MembershipLevel = @MembershipLevel AND ID!={id}";

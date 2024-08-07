@@ -32,7 +32,7 @@
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.buttonAdd = new System.Windows.Forms.Button();
+			this.buttonCreate = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -69,21 +69,22 @@
 			this.Column3.HeaderText = "顯示順序";
 			this.Column3.Name = "Column3";
 			// 
-			// buttonAdd
+			// buttonCreate
 			// 
-			this.buttonAdd.Location = new System.Drawing.Point(348, 229);
-			this.buttonAdd.Name = "buttonAdd";
-			this.buttonAdd.Size = new System.Drawing.Size(128, 29);
-			this.buttonAdd.TabIndex = 1;
-			this.buttonAdd.Text = "新增";
-			this.buttonAdd.UseVisualStyleBackColor = true;
+			this.buttonCreate.Location = new System.Drawing.Point(348, 229);
+			this.buttonCreate.Name = "buttonCreate";
+			this.buttonCreate.Size = new System.Drawing.Size(128, 29);
+			this.buttonCreate.TabIndex = 1;
+			this.buttonCreate.Text = "新增";
+			this.buttonCreate.UseVisualStyleBackColor = true;
+			this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
 			// 
 			// FormMbships
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(489, 277);
-			this.Controls.Add(this.buttonAdd);
+			this.Controls.Add(this.buttonCreate);
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "FormMbships";
 			this.Text = "FormMbships";
@@ -98,6 +99,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.Button buttonAdd;
+		private System.Windows.Forms.Button buttonCreate;
 	}
 }

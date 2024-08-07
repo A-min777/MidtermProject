@@ -65,5 +65,28 @@ namespace MidtermProject
 			((IGrid)this.Owner).BindData();
 			this.Close();
 		}
+
+		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			var repo = new MbshipRepo();
+
+			DialogResult result = MessageBox.Show(
+				"您確定要刪除這個項目嗎？", "確認刪除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				try
+				{
+					repo.Delete(id);
+					MessageBox.Show("成功刪除商品分類");
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("刪除失敗,原因:" + ex.Message);
+				}
+
+				((IGrid)this.Owner).BindData();
+				this.Close();
+			}
+		}
 	}
 }
