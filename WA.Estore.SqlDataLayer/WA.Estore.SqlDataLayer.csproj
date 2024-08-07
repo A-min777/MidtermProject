@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MbshipRepo.cs" />
+    <Compile Include="MbshipsDto.cs" />
+    <Compile Include="MbshipService.cs" />
     <Compile Include="SqlDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

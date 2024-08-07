@@ -53,16 +53,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditMbship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditMbship.Designer.cs">
+      <DependentUpon>FormEditMbship.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMbships.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMbships.Designer.cs">
       <DependentUpon>FormMbships.cs</DependentUpon>
     </Compile>
+    <Compile Include="IGrid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditMbship.resx">
+      <DependentUpon>FormEditMbship.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMbships.resx">
       <DependentUpon>FormMbships.cs</DependentUpon>

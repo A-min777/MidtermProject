@@ -36,25 +36,26 @@
 			// 
 			// buttonConnDb
 			// 
-			this.buttonConnDb.Location = new System.Drawing.Point(27, 28);
+			this.buttonConnDb.Location = new System.Drawing.Point(27, 12);
 			this.buttonConnDb.Name = "buttonConnDb";
-			this.buttonConnDb.Size = new System.Drawing.Size(204, 40);
+			this.buttonConnDb.Size = new System.Drawing.Size(204, 21);
 			this.buttonConnDb.TabIndex = 0;
 			this.buttonConnDb.Text = "連結Db";
 			this.buttonConnDb.UseVisualStyleBackColor = true;
+			this.buttonConnDb.Visible = false;
 			this.buttonConnDb.Click += new System.EventHandler(this.buttonConnDb_Click);
 			// 
 			// comboBox1
 			// 
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(27, 83);
+			this.comboBox1.Location = new System.Drawing.Point(27, 50);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(123, 20);
 			this.comboBox1.TabIndex = 1;
 			// 
 			// buttonGetAll
 			// 
-			this.buttonGetAll.Location = new System.Drawing.Point(156, 80);
+			this.buttonGetAll.Location = new System.Drawing.Point(156, 47);
 			this.buttonGetAll.Name = "buttonGetAll";
 			this.buttonGetAll.Size = new System.Drawing.Size(75, 23);
 			this.buttonGetAll.TabIndex = 2;
@@ -64,7 +65,7 @@
 			// 
 			// buttonMbships
 			// 
-			this.buttonMbships.Location = new System.Drawing.Point(27, 126);
+			this.buttonMbships.Location = new System.Drawing.Point(27, 89);
 			this.buttonMbships.Name = "buttonMbships";
 			this.buttonMbships.Size = new System.Drawing.Size(123, 54);
 			this.buttonMbships.TabIndex = 3;
@@ -76,7 +77,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(287, 192);
 			this.Controls.Add(this.buttonMbships);
 			this.Controls.Add(this.buttonGetAll);
 			this.Controls.Add(this.comboBox1);
