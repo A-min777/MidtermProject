@@ -32,6 +32,8 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.buttonGetAll = new System.Windows.Forms.Button();
 			this.buttonMbships = new System.Windows.Forms.Button();
+			this.buttonMembers = new System.Windows.Forms.Button();
+			this.buttonPcRecords = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// buttonConnDb
@@ -67,17 +69,39 @@
 			// 
 			this.buttonMbships.Location = new System.Drawing.Point(27, 89);
 			this.buttonMbships.Name = "buttonMbships";
-			this.buttonMbships.Size = new System.Drawing.Size(123, 54);
+			this.buttonMbships.Size = new System.Drawing.Size(66, 54);
 			this.buttonMbships.TabIndex = 3;
-			this.buttonMbships.Text = "會員資格編輯";
+			this.buttonMbships.Text = "編輯會員資格";
 			this.buttonMbships.UseVisualStyleBackColor = true;
 			this.buttonMbships.Click += new System.EventHandler(this.buttonMbships_Click);
+			// 
+			// buttonMembers
+			// 
+			this.buttonMembers.Location = new System.Drawing.Point(99, 89);
+			this.buttonMembers.Name = "buttonMembers";
+			this.buttonMembers.Size = new System.Drawing.Size(66, 54);
+			this.buttonMembers.TabIndex = 3;
+			this.buttonMembers.Text = "編輯會員";
+			this.buttonMembers.UseVisualStyleBackColor = true;
+			this.buttonMembers.Click += new System.EventHandler(this.buttonMembers_Click);
+			// 
+			// buttonPcRecords
+			// 
+			this.buttonPcRecords.Location = new System.Drawing.Point(171, 89);
+			this.buttonPcRecords.Name = "buttonPcRecords";
+			this.buttonPcRecords.Size = new System.Drawing.Size(66, 54);
+			this.buttonPcRecords.TabIndex = 3;
+			this.buttonPcRecords.Text = "編輯消費紀錄";
+			this.buttonPcRecords.UseVisualStyleBackColor = true;
+			this.buttonPcRecords.Click += new System.EventHandler(this.buttonMbships_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(287, 192);
+			this.Controls.Add(this.buttonPcRecords);
+			this.Controls.Add(this.buttonMembers);
 			this.Controls.Add(this.buttonMbships);
 			this.Controls.Add(this.buttonGetAll);
 			this.Controls.Add(this.comboBox1);
@@ -94,6 +118,8 @@
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Button buttonGetAll;
 		private System.Windows.Forms.Button buttonMbships;
+		private System.Windows.Forms.Button buttonMembers;
+		private System.Windows.Forms.Button buttonPcRecords;
 	}
 }
 

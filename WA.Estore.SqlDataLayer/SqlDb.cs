@@ -9,7 +9,7 @@ namespace WA.Estore.SqlDataLayer
 {
     public class SqlDb
     {
-        public string GetconnString(string key)
+        public static string GetconnString(string key)
         {
             return System.Configuration.ConfigurationManager.ConnectionStrings[key].ToString();
         }

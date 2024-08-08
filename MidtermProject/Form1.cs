@@ -62,6 +62,10 @@ namespace MidtermProject
 		{
 			new FormMbships().ShowDialog();
 		}
+		private void buttonMembers_Click(object sender, EventArgs e)
+		{
+			new FormMembers().ShowDialog();
+		}
 
 		private void buttonGetAll_Click(object sender, EventArgs e)
 		{			
@@ -73,6 +77,9 @@ namespace MidtermProject
 				case -1:
 					MessageBox.Show("未選取資料表"); ;
 					break;
+				case 0:
+					new FormMembers().ShowDialog();
+					break;
 				case 1:
 					new FormMbships().ShowDialog();
 					break;
@@ -80,7 +87,8 @@ namespace MidtermProject
 					MessageBox.Show("未找到資料表");
 					return;
 			}
-		}			
+		}
 
+		
 	}
 }
