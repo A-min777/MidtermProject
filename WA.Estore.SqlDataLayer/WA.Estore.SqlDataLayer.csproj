@@ -45,13 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mbship.cs" />
-    <Compile Include="MbshipRepo.cs" />
-    <Compile Include="MbshipsDto.cs" />
-    <Compile Include="MbshipService.cs" />
-    <Compile Include="Member.cs" />
-    <Compile Include="MemberRepo.cs" />
-    <Compile Include="MemberService.cs" />
+    <Compile Include="DTO\Mbship.cs" />
+    <Compile Include="repo\MbshipRepo.cs" />
+    <Compile Include="DTO\MbshipsDto.cs" />
+    <Compile Include="service\MbshipService.cs" />
+    <Compile Include="DTO\Member.cs" />
+    <Compile Include="repo\MemberRepo.cs" />
+    <Compile Include="service\MemberService.cs" />
+    <Compile Include="MemberVM.cs" />
     <Compile Include="SqlDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

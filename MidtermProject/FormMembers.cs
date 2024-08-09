@@ -24,17 +24,20 @@ namespace MidtermProject
 		private void FormMembers_Load(object sender, EventArgs e)
 		{
 			BindData();
-		}
+		}		
 
-		List<Member> members;
+		List<MemberVM> memberVM;
 		public void BindData()
 		{						
-			string sql = "SELECT * FROM Members ORDER BY id";
+			string sql = @"SELECT M.* , MS.MembershipLevel
+FROM Members AS M 
+INNER JOIN Memberships AS  MS ON M.MembershipId = MS.Id
+ORDER BY MembershipLevel";
 			using (var conn = new SqlConnection(SqlDb.GetconnString("default")))
 			{
-				members = conn.Query<Member>(sql).ToList();
+				memberVM = conn.Query<MemberVM>(sql).ToList();
 			}
-			dataGridView1.DataSource = members;							
+			dataGridView1.DataSource = memberVM;							
 		}
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +45,7 @@ namespace MidtermProject
 
 			if (e.RowIndex < 0) return;
 
-			var frm = new FormEditMember(members[e.RowIndex].Id);
+			var frm = new FormEditMember(memberVM[e.RowIndex].Id);
 			frm.Owner = this;
 			frm.ShowDialog();
 		}

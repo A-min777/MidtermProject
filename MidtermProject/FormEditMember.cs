@@ -32,8 +32,8 @@ namespace MidtermProject
 		{
 			get
 			{
-				int.TryParse(textBoxAge.Text, out int Age);
-				return Age;
+				DateTime Bday =  dateTimePickerBDay.Value;
+				return (int)DateTime.Today.Year - Bday.Year;
 			}
 		}
 
@@ -49,8 +49,7 @@ namespace MidtermProject
 		{
 			Member members = new MemberRepo().Get(id);
 
-			textBoxMbName.Text = members.Name;
-			textBoxAge.Text = members.Age.ToString();			
+			textBoxMbName.Text = members.Name;						
 			radioButtonF.Checked = members.Gender == 0;
 			dateTimePickerBDay.Value = members.Birthday;
 		}
