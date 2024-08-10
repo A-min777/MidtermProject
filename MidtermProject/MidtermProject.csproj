@@ -36,9 +36,18 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,28 +59,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EFModels\Admin.cs" />
+    <Compile Include="EFModels\AppDbContext.cs" />
+    <Compile Include="EFModels\Member.cs" />
+    <Compile Include="EFModels\Membership.cs" />
+    <Compile Include="EFModels\PurchaseRecord.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCreateMember.cs">
+    <Compile Include="FormEditPcRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCreateMember.Designer.cs">
+    <Compile Include="FormEditPcRecord.Designer.cs">
+      <DependentUpon>FormEditPcRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPurchaseRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPurchaseRecords.Designer.cs">
+      <DependentUpon>FormPurchaseRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidtermDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MidtermDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MidtermDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MidtermDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="會員[Member]\FormCreateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="會員[Member]\FormCreateMember.Designer.cs">
       <DependentUpon>FormCreateMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditMember.cs">
+    <Compile Include="會員[Member]\FormEditMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditMember.Designer.cs">
+    <Compile Include="會員[Member]\FormEditMember.Designer.cs">
       <DependentUpon>FormEditMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMembers.cs">
+    <Compile Include="會員[Member]\FormMembers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMembers.Designer.cs">
+    <Compile Include="會員[Member]\FormMembers.Designer.cs">
       <DependentUpon>FormMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="會員階級[Mbships]\FormCreateMbship.cs">
@@ -98,13 +134,19 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCreateMember.resx">
+    <EmbeddedResource Include="FormEditPcRecord.resx">
+      <DependentUpon>FormEditPcRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPurchaseRecords.resx">
+      <DependentUpon>FormPurchaseRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="會員[Member]\FormCreateMember.resx">
       <DependentUpon>FormCreateMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditMember.resx">
+    <EmbeddedResource Include="會員[Member]\FormEditMember.resx">
       <DependentUpon>FormEditMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMembers.resx">
+    <EmbeddedResource Include="會員[Member]\FormMembers.resx">
       <DependentUpon>FormMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="會員階級[Mbships]\FormCreateMbship.resx">
@@ -125,6 +167,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MidtermDataSet.xsc">
+      <DependentUpon>MidtermDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MidtermDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MidtermDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MidtermDataSet.xss">
+      <DependentUpon>MidtermDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MidtermDataSet1.xsc">
+      <DependentUpon>MidtermDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MidtermDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MidtermDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MidtermDataSet1.xss">
+      <DependentUpon>MidtermDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -66,7 +66,10 @@ namespace MidtermProject
 		{
 			new FormMembers().ShowDialog();
 		}
-
+		private void buttonPcRecords_Click(object sender, EventArgs e)
+		{
+			new FormPurchaseRecords().ShowDialog();
+		}
 		private void buttonGetAll_Click(object sender, EventArgs e)
 		{			
 
@@ -82,6 +85,9 @@ namespace MidtermProject
 					break;
 				case 1:
 					new FormMbships().ShowDialog();
+					break;
+				case 2:
+					new FormPurchaseRecords().ShowDialog();
 					break;
 				default:
 					MessageBox.Show("未找到資料表");

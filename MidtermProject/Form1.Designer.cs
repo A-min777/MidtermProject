@@ -93,7 +93,7 @@
 			this.buttonPcRecords.TabIndex = 3;
 			this.buttonPcRecords.Text = "編輯消費紀錄";
 			this.buttonPcRecords.UseVisualStyleBackColor = true;
-			this.buttonPcRecords.Click += new System.EventHandler(this.buttonMbships_Click);
+			this.buttonPcRecords.Click += new System.EventHandler(this.buttonPcRecords_Click);
 			// 
 			// Form1
 			// 
