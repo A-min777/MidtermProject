@@ -8,6 +8,8 @@ namespace WA.Estore.SqlDataLayer
 {
 	public class Member
 	{
+		
+
 		public Member()
 		{
 			Mbships = new List<Mbship>();
@@ -18,10 +20,9 @@ namespace WA.Estore.SqlDataLayer
 		public int MembershipId { get; set; }
 		public string Name { get; set; }
 		public int Gender { get; set; }
-		public int Age { get; set; }
+		public int Age { get; set; }		
 		public DateTime Birthday { get; set; }
         public int TotalSpent { get; set; }
-
 		public List<Mbship> Mbships { get; set; }
 
     }

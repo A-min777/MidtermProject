@@ -15,18 +15,27 @@ namespace WA.Estore.SqlDataLayer
 			repo = new MemberRepo();
         }
 
-		public void Update(Member member)
+		public void ValueCheck(Member member)
 		{
-			if (member == null) throw new ArgumentNullException(nameof(member));
-			if(member.Age<0) throw new Exception("輸入年齡不可為負數");
-			if (member.Name.Length > 20) throw new Exception("輸入名稱太長");
-			if (member.Birthday > DateTime.Now) throw new Exception("出生日期輸入錯誤");
+			if (string.IsNullOrEmpty(member.Name)) throw new Exception("輸入名稱不可為空白");
+			if (member.Name.Length > 15) throw new Exception("輸入名稱太長");
+			if (member.Birthday > DateTime.Today.AddDays(1)) throw new Exception("出生日期輸入錯誤");
 
 			var memberInDb = repo.Get(member.Name);
 			if (memberInDb != null && memberInDb.Id != member.Id) throw new ArgumentException("已存在相同姓名");
+						
+		} 
+		public void Update(Member member)
+		{
+			ValueCheck(member);
 			repo.Update(member);
 		}
 
-		
-    }
+		public void Create(Member member)
+		{
+			ValueCheck(member);
+			repo.Create(member);
+		}
+
+	}
 }

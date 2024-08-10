@@ -8,7 +8,7 @@ namespace WA.Estore.SqlDataLayer
 {
 	public class Mbship
 	{
-		public int Id { get; set; }
+        public int Id { get; set; }
 		public string MembershipLevel { get; set; }
 		public int DisplayOrder { get; set; }
 

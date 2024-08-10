@@ -36,11 +36,15 @@
 			this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TotalSpent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.buttonCreate = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -100,11 +104,23 @@
 			this.TotalSpent.HeaderText = "累計消費";
 			this.TotalSpent.Name = "TotalSpent";
 			// 
+			// buttonCreate
+			// 
+			this.buttonCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonCreate.Location = new System.Drawing.Point(645, 280);
+			this.buttonCreate.Name = "buttonCreate";
+			this.buttonCreate.Size = new System.Drawing.Size(128, 29);
+			this.buttonCreate.TabIndex = 2;
+			this.buttonCreate.Text = "新增";
+			this.buttonCreate.UseVisualStyleBackColor = true;
+			this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+			// 
 			// FormMembers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 331);
+			this.Controls.Add(this.buttonCreate);
 			this.Controls.Add(this.dataGridView1);
 			this.Name = "FormMembers";
 			this.Text = "FormMembers";
@@ -123,5 +139,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Age;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TotalSpent;
+		private System.Windows.Forms.Button buttonCreate;
 	}
 }

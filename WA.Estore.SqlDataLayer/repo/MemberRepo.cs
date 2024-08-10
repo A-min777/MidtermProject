@@ -46,5 +46,24 @@ namespace WA.Estore.SqlDataLayer
 				conn.Execute(sql, member);
 			}
 		}
+
+		public void Create(Member member)
+		{
+			string sql = "INSERT INTO Members (MembershipId , Name , Gender , Age , Birthday , TotalSpent) VALUES(@MembershipId , @Name , @Gender , @Age , @Birthday , @TotalSpent)";
+
+			using (var conn = new SqlConnection(_connStr))
+			{
+				conn.Execute(sql, member);
+			}
+		}
+		public void Delete(int Id)
+		{
+			var sql = $"DELETE FROM Members WHERE Id = {Id}";
+
+			using (var conn = new SqlConnection(_connStr))
+			{
+				conn.Execute(sql, new { Id = Id });
+			}
+		}
 	}
 }

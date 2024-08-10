@@ -49,5 +49,12 @@ ORDER BY MembershipLevel";
 			frm.Owner = this;
 			frm.ShowDialog();
 		}
+
+		private void buttonCreate_Click(object sender, EventArgs e)
+		{
+			var frm = new FormCreateMember();
+			frm.Owner = this;
+			frm.ShowDialog();
+		}
 	}
 }
