@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WA.Estore.SqlDataLayer;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MidtermProject
 {
@@ -18,14 +19,53 @@ namespace MidtermProject
 		{
 			InitializeComponent();
 			Load += FormPurchaseRecords_Load;
+			comboBoxOrderBy.SelectedIndexChanged += ComboBoxOrderBy_SelectedIndexChanged;
+		}
+
+		private void ComboBoxOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			BindData();
 		}
 
 		private void FormPurchaseRecords_Load(object sender, EventArgs e)
 		{
-			BindData();
+			InitCombo();			
+		}	
+
+		private void InitCombo()
+		{
+			var order = new List<Order>
+			{
+				new Order {Id = 1 , Text = "預設" },
+				new Order {Id = 2 , Text = "以會員姓名排序" },
+				new Order {Id = 3 , Text = "以消費日期排序" },
+			};
+			var combo = this.comboBoxOrderBy;	
+			combo.DataSource = order;
+			combo.DisplayMember = "Text";
 		}
-		List<PurchaseRecordVM> purchase;
+
 		public void BindData()
+		{
+			int selected = comboBoxOrderBy.SelectedIndex;
+
+			switch (selected)
+			{
+				
+				case 0:
+					OrderByDefault();
+					break;
+				case 1:
+					OrderByMember();
+					break;
+				case 2:
+					OrderByPurchase();
+					break;				
+			}
+		}
+
+		List<PurchaseRecordVM> purchase;
+		public void OrderByDefault()
 		{
 			using (var db = new AppDbContext())
 			{
@@ -40,6 +80,42 @@ namespace MidtermProject
 					}).ToList();
 				dataGridView1.DataSource = purchase;
 			}		
+		}
+		public void OrderByMember()
+		{
+			using (var db = new AppDbContext())
+			{
+				purchase = db.PurchaseRecords
+					.AsNoTracking()
+					.Select(x => new PurchaseRecordVM
+					{
+						Id = x.Id,
+						Name = x.Member.Name,
+						Amount = x.Amount,
+						PurchaseDate = x.PurchaseDate,
+					})
+					.OrderBy(x => x.Name)
+					.ToList();
+				dataGridView1.DataSource = purchase;
+			}
+		}
+		public void OrderByPurchase()
+		{
+			using (var db = new AppDbContext())
+			{
+				purchase = db.PurchaseRecords
+					.AsNoTracking()
+					.Select(x => new PurchaseRecordVM
+					{
+						Id = x.Id,
+						Name = x.Member.Name,
+						Amount = x.Amount,
+						PurchaseDate = x.PurchaseDate,
+					})
+					.OrderBy(x => x.PurchaseDate)
+					.ToList();
+				dataGridView1.DataSource = purchase;
+			}
 		}
 
 		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,5 +133,11 @@ namespace MidtermProject
 			frm.Owner = this;
 			frm.ShowDialog();
 		}
+	}
+
+	public class Order
+	{
+		public int Id { get; set; }
+		public string Text { get; set; }
 	}
 }
