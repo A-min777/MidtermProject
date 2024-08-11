@@ -50,5 +50,12 @@ namespace MidtermProject
 			frm.Owner = this;
 			frm.ShowDialog();
 		}
+
+		private void buttonCreate_Click(object sender, EventArgs e)
+		{
+			var frm = new FormCreatePcRecord();
+			frm.Owner = this;
+			frm.ShowDialog();
+		}
 	}
 }

@@ -37,16 +37,16 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBoxAmount = new System.Windows.Forms.TextBox();
 			this.comboBoxMbName = new System.Windows.Forms.ComboBox();
+			this.membersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.midtermDataSet1 = new MidtermProject.MidtermDataSet1();
 			this.membersBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.membersTableAdapter = new MidtermProject.MidtermDataSetTableAdapters.MembersTableAdapter();
 			this.midtermDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.midtermDataSet1 = new MidtermProject.MidtermDataSet1();
-			this.membersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.membersTableAdapter1 = new MidtermProject.MidtermDataSet1TableAdapters.MembersTableAdapter();
+			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.midtermDataSet1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.midtermDataSetBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.midtermDataSet1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dateTimePickerPcDay
@@ -69,6 +69,7 @@
 			this.buttonDelete.TabIndex = 13;
 			this.buttonDelete.Text = "刪除";
 			this.buttonDelete.UseVisualStyleBackColor = false;
+			this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
 			// 
 			// buttonUpdate
 			// 
@@ -126,19 +127,19 @@
 			this.comboBoxMbName.TabIndex = 16;
 			this.comboBoxMbName.ValueMember = "Id";
 			// 
-			// membersTableAdapter
+			// membersBindingSource1
 			// 
-			this.membersTableAdapter.ClearBeforeFill = true;
+			this.membersBindingSource1.DataMember = "Members";
+			this.membersBindingSource1.DataSource = this.midtermDataSet1;
 			// 
 			// midtermDataSet1
 			// 
 			this.midtermDataSet1.DataSetName = "MidtermDataSet1";
 			this.midtermDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
-			// membersBindingSource1
+			// membersTableAdapter
 			// 
-			this.membersBindingSource1.DataMember = "Members";
-			this.membersBindingSource1.DataSource = this.midtermDataSet1;
+			this.membersTableAdapter.ClearBeforeFill = true;
 			// 
 			// membersTableAdapter1
 			// 
@@ -160,10 +161,10 @@
 			this.Name = "FormEditPcRecord";
 			this.Text = "FormEditPcRecord";
 			this.Load += new System.EventHandler(this.FormEditPcRecord_Load);
+			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.midtermDataSet1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.midtermDataSetBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.midtermDataSet1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.membersBindingSource1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

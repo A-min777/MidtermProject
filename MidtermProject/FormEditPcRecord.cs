@@ -23,9 +23,9 @@ namespace MidtermProject
 		}
 
 		private void FormEditPcRecord_Load(object sender, EventArgs e)
-		{
-			LoadDate();
+		{			
 			this.membersTableAdapter1.Fill(this.midtermDataSet1.Members);
+			LoadDate();
 		}
 
 		private void LoadDate()
@@ -40,12 +40,19 @@ namespace MidtermProject
 				dateTimePickerPcDay.Value = (DateTime)record.PurchaseDate;
 			}
 		}
+		
+		public bool IsValid()
+		{
+			if (string.IsNullOrEmpty(textBoxAmount.Text)) { MessageBox.Show("請輸入金額"); return false; }
+			if (!int.TryParse(textBoxAmount.Text, out int amount)){ MessageBox.Show("金額格式錯誤"); return false; }
+			if (dateTimePickerPcDay.Value.Date > DateTime.Today.Date) { MessageBox.Show("日期輸入錯誤"); return false; }
+
+			return true;
+		}
 
 		private void buttonUpdate_Click(object sender, EventArgs e)
 		{
-			if(string.IsNullOrEmpty(textBoxAmount.Text)) { MessageBox.Show("請輸入金額"); }
-			int.TryParse(textBoxAmount.Text, out int amount);
-			if (dateTimePickerPcDay.Value > DateTime.Today) { MessageBox.Show("日期輸入錯誤"); }
+			if (IsValid() != true) return;
 
 			using (var db = new AppDbContext())
 			{
@@ -53,6 +60,8 @@ namespace MidtermProject
 					.FirstOrDefault(x => x.Id == id);
 				try
 				{
+					
+					int.TryParse(textBoxAmount.Text, out int amount);
 					record.MemberId= (int)comboBoxMbName.SelectedValue;
 					record.Amount = amount;
 					record.PurchaseDate = dateTimePickerPcDay.Value;
@@ -69,6 +78,24 @@ namespace MidtermProject
 			this.Close();
 		}
 
-		
+		private void buttonDelete_Click(object sender, EventArgs e)
+		{
+			DialogResult result = MessageBox.Show(
+				"您確定要刪除這個項目嗎？", "確認刪除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (result == DialogResult.Yes)
+			{
+				using (var db = new AppDbContext())
+				{
+					PurchaseRecord record = db.PurchaseRecords
+						.FirstOrDefault(x => x.Id == id);
+
+					db.PurchaseRecords.Remove(record);
+					db.SaveChanges();
+				} 
+				
+				((IGrid)this.Owner).BindData();
+				this.Close();
+			}			
+		}
 	}
 }

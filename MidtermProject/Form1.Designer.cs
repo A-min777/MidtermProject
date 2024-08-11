@@ -52,12 +52,12 @@
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.Location = new System.Drawing.Point(27, 50);
 			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(123, 20);
+			this.comboBox1.Size = new System.Drawing.Size(129, 20);
 			this.comboBox1.TabIndex = 1;
 			// 
 			// buttonGetAll
 			// 
-			this.buttonGetAll.Location = new System.Drawing.Point(156, 47);
+			this.buttonGetAll.Location = new System.Drawing.Point(162, 47);
 			this.buttonGetAll.Name = "buttonGetAll";
 			this.buttonGetAll.Size = new System.Drawing.Size(75, 23);
 			this.buttonGetAll.TabIndex = 2;

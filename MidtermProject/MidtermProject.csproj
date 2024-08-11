@@ -70,6 +70,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCreatePcRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreatePcRecord.Designer.cs">
+      <DependentUpon>FormCreatePcRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditPcRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreatePcRecord.resx">
+      <DependentUpon>FormCreatePcRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditPcRecord.resx">
       <DependentUpon>FormEditPcRecord.cs</DependentUpon>
