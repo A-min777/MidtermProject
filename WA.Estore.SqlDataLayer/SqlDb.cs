@@ -35,6 +35,26 @@ namespace WA.Estore.SqlDataLayer
 			
 		}
 
+		public T Get<T>(string key, string sql, Func<SqlDataReader, T> func, SqlParameter[] parameters)
+		{
+			using (var conn = Getconn(key))
+			{
+				conn.Open();
+
+				using (SqlCommand cmd = conn.CreateCommand())
+				{
+					cmd.CommandText = sql;
+					if (parameters != null && parameters.Length > 0)
+					{
+						cmd.Parameters.AddRange(parameters);
+					}
+					SqlDataReader reader = cmd.ExecuteReader();
+					return func(reader);
+				}
+			}
+
+		}
+
 		public List<T> Select<T>(string key, string sql, Func<SqlDataReader,T> func)
         {
             List<T> list = new List<T>();

@@ -45,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminDto.cs" />
     <Compile Include="DTO\Mbship.cs" />
+    <Compile Include="LoginRepo.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="VM\PurchaseRecordVM.cs" />
     <Compile Include="repo\MbshipRepo.cs" />
     <Compile Include="DTO\MbshipsDto.cs" />

@@ -21,7 +21,7 @@ namespace MidtermProject
 
 		private void buttonConnDb_Click(object sender, EventArgs e)
 		{
-			using(var conn = new SqlDb().Getconn("default"))
+			using (var conn = new SqlDb().Getconn("default"))
 			{
 				conn.Open();
 			}
@@ -39,7 +39,7 @@ namespace MidtermProject
 
 					var tablesHide = new[] { "sysdiagrams", "Admins" };
 
-					foreach(DataRow row in schema.Rows)
+					foreach (DataRow row in schema.Rows)
 					{
 						string tableName = row["TABLE_NAME"].ToString();
 
@@ -47,10 +47,10 @@ namespace MidtermProject
 						{
 							comboBox1.Items.Add(tableName);
 						}
-						
+
 					}
 				}
-				catch(Exception ex)
+				catch (Exception ex)
 				{
 					MessageBox.Show("錯誤: " + ex.Message);
 				}
@@ -71,10 +71,10 @@ namespace MidtermProject
 			new FormPurchaseRecords().ShowDialog();
 		}
 		private void buttonGetAll_Click(object sender, EventArgs e)
-		{			
+		{
 
 			int selected = comboBox1.SelectedIndex;
-			
+
 			switch (selected)
 			{
 				case -1:
@@ -94,7 +94,5 @@ namespace MidtermProject
 					return;
 			}
 		}
-
-		
 	}
 }
