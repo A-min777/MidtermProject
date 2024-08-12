@@ -77,7 +77,7 @@ namespace MidtermProject
 				try
 				{
 					repo.Delete(id);
-					MessageBox.Show("成功刪除商品分類");
+					MessageBox.Show("成功刪除會員階級");
 				}
 				catch (Exception ex)
 				{

@@ -58,11 +58,29 @@ namespace WA.Estore.SqlDataLayer
 		}
 		public void Delete(int Id)
 		{
-			var sql = $"DELETE FROM Members WHERE Id = {Id}";
+			var sql = $"DELETE FROM PurchaseRecords WHERE MemberId = {Id}";
+			var sql2 = $"DELETE FROM Members WHERE Id = {Id}";
 
 			using (var conn = new SqlConnection(_connStr))
 			{
-				conn.Execute(sql, new { Id = Id });
+				conn.Open();
+				using(var transaction = conn.BeginTransaction())
+				{
+					try
+					{
+						conn.Execute(sql, new { Id = Id }, transaction);
+						conn.Execute(sql2, new { Id = Id }, transaction);
+
+						transaction.Commit();
+					}
+					catch (Exception ex)
+					{
+						transaction.Rollback();
+						throw ex;
+					}
+					
+				}
+				
 			}
 		}
 	}
